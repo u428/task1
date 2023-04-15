@@ -20,7 +20,7 @@ public class Main {
         ConnectJDBC connectJDBC = new ConnectJDBC();
 //        connectJDBC.createTableJDBC();
 //        connectJDBC.insertIntoJDBC(connectJDBC.preparingInsert(readsCVS));
-//        connectJDBC.updateDataJDBC(new DataJDBC(2, "name", 123));
+        connectJDBC.updateDataJDBC(new DataJDBC(5, "name", 123));
         connectJDBC.selectFromJDBC();
 
     }

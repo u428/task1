@@ -58,12 +58,8 @@ public class ConnectJDBC {
 
     public void updateDataJDBC(DataJDBC data) {
         try (Connection conn = connect(); Statement stmt = conn.createStatement()) {
-//                String sql = "UPDATE test SET name='" +data.getName()+ "', WHERE id='" +data.getId()+"')";
-            PreparedStatement updateStmt =
-                    conn.prepareStatement("UPDATE test SET name = ? WHERE id = ?");
-            updateStmt.setString(1, "name");
-            updateStmt.setInt(2, 2);
-                int x = updateStmt.executeUpdate();
+                String sql = "UPDATE test SET name ='" +data.getName()+ "', value ='"+data.getValue()+"' WHERE id ='" +data.getId()+"'";
+                int x = stmt.executeUpdate(sql);
                 if (x > 0) System.out.println("Successfully updated");
                 else System.out.println("update Failed");
         } catch (SQLException ex) {
